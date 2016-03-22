@@ -20,7 +20,7 @@
 
     <!-- Favicon & Apple Touch Icon -->
     <?php
-        $favicon = IMAGES . '/icons/favicon.ico';
+        $favicon   = IMAGES . '/icons/favicon.ico';
         $touchicon = IMAGES . '/icons/apple-touch-icon-precomposed.png';
     ?>
 
@@ -52,11 +52,19 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+<!--            <ul class="nav navbar-nav navbar-right">-->
+<!--                <li><a href="index.html">Home</a></li>-->
+<!--                <li><a href="blog.html">Blog</a></li>-->
+<!--                <li><a href="contact.html">Contact</a></li>-->
+<!--            </ul>-->
+            <?php
+                wp_nav_menu(
+                    array(
+                        'menu_class'     => 'nav navbar-nav navbar-right',
+                        'theme_location' => 'main-menu',
+                    )
+                );
+            ?>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
