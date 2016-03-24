@@ -40,8 +40,18 @@ get_header();
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>
+
+				<?php
+					/* Pagination */
+					versover_numbered_pagination();
+				?>
 			</div>
 		</div>
 
 	</div>
 </div>
+
+<?php
+	/* Load footer.php */
+	get_footer();
+?>

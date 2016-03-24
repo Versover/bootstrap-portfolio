@@ -51,3 +51,34 @@ if ( ! function_exists( 'versover_post_meta' ) ) {
         }
     }
 }
+
+/**
+ * 4. Numbered pagination
+ */
+if ( ! function_exists( 'versover_numbered_pagination' ) ) {
+    function versover_numbered_pagination() {
+        $args = array(
+            'prev_next' => false,
+            'type'      => 'array',
+        );
+
+        echo '<div class="col-md-12">';
+        $pagination = paginate_links( $args );
+
+        if ( is_array( $pagination ) ) {
+            echo '<ul class="nav nav-pills">';
+
+            foreach ( $pagination as $page ) {
+                if ( strpos( $page, 'current') ) {
+                    echo '<li class="active"><a href="#">' . $page . '</a></li>';
+                } else {
+                    echo '<li>'. $page . '</li>';
+                }
+            }
+
+            echo '</ul>';
+        }
+
+        echo '</div>';
+    }
+}

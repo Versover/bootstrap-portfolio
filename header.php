@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php esc_url( home_url('/') ); ?>">
+            <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
                 <?php bloginfo( 'name' );?>
             </a>
         </div>
