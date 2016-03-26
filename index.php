@@ -28,7 +28,10 @@ get_header();
 	<div class="row">
 
 		<aside class="sidebar col-md-3 col-md-offset-1 col-md-push-8">
-			sidebar here
+			<?php
+				/* load sidebar */
+				get_sidebar();
+			?>
 		</aside>
 
 		<div class="posts col-md-8 col-md-pull-4">
