@@ -82,3 +82,24 @@ if ( ! function_exists( 'versover_numbered_pagination' ) ) {
         echo '</div>';
     }
 }
+
+/**
+ * 5. Register widget areas
+ */
+if ( ! function_exists( 'versover_widget_init' ) ) {
+    function versover_widget_init() {
+        if ( function_exists( 'register_sidebar' ) ) {
+            register_sidebar( array(
+                'name'          => __( 'Main Widget Areas', 'versover' ),
+                'id'            => 'main-sidebar',
+                'description'   => __( 'Areas in the blog pages.', 'versover' ),
+                'before_widget' => '<div id="%1$s" class="%2$s"></div>',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
+            ) );
+        }
+    }
+
+    add_action( 'widgets_init', 'versover_widget_init' );
+}
