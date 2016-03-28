@@ -47,7 +47,7 @@ if ( ! function_exists( 'versover_post_meta' ) ) {
             _e( 'by ', 'versover' );
             printf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() );
             _e( ' on ', 'versover' );
-            echo '<span>' . get_the_date() . '</span></p>';
+            echo ' <span>' . get_the_date() . '</span></p>';
         }
     }
 }
@@ -93,7 +93,7 @@ if ( ! function_exists( 'versover_widget_init' ) ) {
                 'name'          => __( 'Main Widget Areas', 'versover' ),
                 'id'            => 'main-sidebar',
                 'description'   => __( 'Areas in the blog pages.', 'versover' ),
-                'before_widget' => '<div id="%1$s" class="%2$s"></div>',
+                'before_widget' => '<div id="%1$s" class="%2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h2>',
                 'after_title'   => '</h2>',
@@ -102,4 +102,31 @@ if ( ! function_exists( 'versover_widget_init' ) ) {
     }
 
     add_action( 'widgets_init', 'versover_widget_init' );
+}
+
+/**
+ * 6. Scripts
+ */
+if ( ! function_exists( 'versover_scripts' ) ) {
+    function versover_scripts() {
+        /* Register scripts */
+        wp_register_script( 'modernizr-js', JS . '/vendor/modernizr-2.6.2.min.js', false, false, false );
+        wp_register_script( 'bootstrap-js', THEMEROOT . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), false, true );
+        wp_register_script( 'isotope-js', THEMEROOT . '/bower_components/isotope/dist/isotope.pkgd.min.js', false, false, true );
+        wp_register_script( 'plugins-js', JS . '/plugins.js', false, false, true );
+        wp_register_script( 'main-js', JS . '/main.js', false, false, true );
+
+        /* Load custom scripts */
+        wp_enqueue_script( 'modernizr-js' );
+        wp_enqueue_script( 'bootstrap-js' );
+        wp_enqueue_script( 'isotope-js' );
+        wp_enqueue_script( 'plugins-js' );
+        wp_enqueue_script( 'main-js' );
+
+        /* Load stylesheets */
+        wp_enqueue_style( 'bootstrap-css', THEMEROOT  . '/bower_components/bootstrap/dist/css/bootstrap.min.css' );
+        wp_enqueue_style( 'main-css', THEMEROOT  . '/css/style.css' );
+    }
+
+    add_action( 'wp_enqueue_scripts', 'versover_scripts' );
 }

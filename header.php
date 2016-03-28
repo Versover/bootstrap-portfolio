@@ -53,13 +53,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <?php
-                wp_nav_menu(
-                    array(
-                        'menu_class'     => 'nav navbar-nav navbar-right',
-                        'theme_location' => 'main-menu',
-                        'container'      => false,
-                    )
-                );
+                wp_nav_menu( array(
+                    'menu_class'     => 'nav navbar-nav navbar-right',
+                    'theme_location' => 'main-menu',
+                    'container'      => false,
+                ) );
             ?>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

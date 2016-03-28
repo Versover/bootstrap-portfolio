@@ -26,10 +26,9 @@ get_header();
 
 <div class="page-blog container-fluid">
 	<div class="row">
-
 		<aside class="sidebar col-md-3 col-md-offset-1 col-md-push-8">
 			<?php
-				/* load sidebar */
+				/* Load sidebar.php */
 				get_sidebar();
 			?>
 		</aside>
@@ -45,12 +44,11 @@ get_header();
 				<?php endif; ?>
 
 				<?php
-					/* Pagination */
+					/* Load numbered pagination. */
 					versover_numbered_pagination();
 				?>
 			</div>
 		</div>
-
 	</div>
 </div>
 
