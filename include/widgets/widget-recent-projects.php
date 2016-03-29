@@ -65,7 +65,7 @@ class Versover_Widget_Recent_Projects extends WP_Widget {
         /* Create a custom query and get the most recent 6 projects. */
         $queryArgs = array(
             /* Do not get posts from the Uncategorized category. */
-            'cat' => '-1',
+            //'cat' => '-1',
             /* Order by date. */
             'orderby' => 'date',
             /* Show all posts. */
