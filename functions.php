@@ -130,3 +130,8 @@ if ( ! function_exists( 'versover_scripts' ) ) {
 
     add_action( 'wp_enqueue_scripts', 'versover_scripts' );
 }
+
+/**
+ * 7. Widgets
+ */
+require_once get_template_directory() . '/include/widgets/widget-recent-projects.php';
