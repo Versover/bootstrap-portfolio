@@ -135,3 +135,12 @@ if ( ! function_exists( 'versover_scripts' ) ) {
  * 7. Widgets
  */
 require_once get_template_directory() . '/include/widgets/widget-recent-projects.php';
+
+/**
+ * 8. Validate field length
+ */
+if ( ! function_exists( 'versover_validate_length' ) ) {
+    function versover_validate_length( $fieldValue, $minLength ) {
+        return ( strlen( trim( $fieldValue ) ) > $minLength );
+    }
+}
